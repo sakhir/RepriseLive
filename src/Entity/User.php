@@ -11,11 +11,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ApiResource(
+ * normalizationContext={"groups":"apprenant:read"}, 
  *  collectionOperations={
  *  "get_apprenants"={ 
  *  "method"="GET", 
  * "path"="/apprenants" , 
- * "normalization_context"={"groups":"apprenant:read"}, 
  * "access_control"="(is_granted('ROLE_ADMIN') or is_granted('ROLE_FORMATEUR'))", 
  * "access_control_message"="Vous n'avez pas access à cette Ressource", 
  * "route_name"="apprenant_liste"
